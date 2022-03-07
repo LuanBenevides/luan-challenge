@@ -12,15 +12,14 @@ the challenger is make a system, with this features:
 - edit users
 - delete users
 
-> struct of user entity
-> - user(
->     name string
->     email string ( 
->       used for login and can't be repeat
->     )
->     password(
->       min of 6 caracters
->     )
->   )
+## truct of user entity
+
+```
+user:{
+  name: "String",
+  email: "String, used for login and can't be repeat",
+  password:" String, min of 6 caracters"
+}
+```
 
 use whatever stacks and much screens you need!
