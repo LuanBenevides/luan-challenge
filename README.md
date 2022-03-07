@@ -1,18 +1,20 @@
 # luan-challege
 this project has a purpose of making the luan's study more effective
 
-## challenger
-the challenger is make a system, with this features:
+## challenge
+the challenge is make a system, with this features:
 
-- login
 - sign-in
+- sign-up
 - logout
 - list of users
 - create users
 - edit users
 - delete users
 
-## truct of user entity
+is neccessary use relacional db (can be whatever db) for this project
+
+## struct of user entity
 
 ```
 user:{
