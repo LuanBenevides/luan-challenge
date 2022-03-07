@@ -22,8 +22,8 @@ user:{
 ```
 
 ## warnings 
-> ⚠️ use whatever stacks and much screens you need!
-> ⚠️ you need to create another branch for development
-> ⚠️ is neccessary use relacional db (can be whatever db) for this project
+> - ⚠️ use whatever stacks and much screens you need!
+> - ⚠️ you need to create another branch for development
+> - ⚠️ is neccessary use relacional db (can be whatever db) for this project
 
 📚 have a nice study!
