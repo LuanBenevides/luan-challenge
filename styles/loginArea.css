@@ -1,0 +1,66 @@
+.loginInputs{
+    position: relative;
+    margin-top: 20px;
+}
+.loginInputs input{
+    width: 240px;
+    padding: 10px;
+    font-size: 16px;
+    color: #181818;
+    outline: none;
+    border: solid 1px #181818;
+}
+.loginInputs span{
+    position: absolute;
+    top: 10px;
+    left: 13px;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    pointer-events: none;
+    font-weight: 600;
+    font-family: sans-serif;
+    transition: .4s;
+    color: #181818;
+}
+.loginInputs input:focus{
+    border: none;
+    outline: 1px solid #181818;
+}
+.loginInputs input:focus + span,
+.loginInputs input:valid + span{
+    top: -12px;
+    left: 10px;
+    font-size: 15px;
+    padding: 0 10px;
+    background-color: #fff;
+}
+.loginAndReset{
+    margin-top: 15px;
+}
+.loginAndReset button{
+    padding: 10px;
+    font-size: 16px;
+    color: #181818;
+    outline: none;
+    border: solid 1px #181818;
+    background-color: #fff;
+    transition: .8s;
+    cursor: pointer;
+}
+.loginAndReset button#login{
+    background-color: #181818;
+    color: #fff;
+    font-weight: 600;
+    margin-left: 16px;
+    font-family: sans-serif;
+}
+.loginAndReset button#login:hover{
+    background-color: #00ff00;
+    color: #181818;
+    border: solid 1px #00ff00;
+}
+.loginAndReset button#reset:hover{
+    background-color: #ff0000;
+    border: solid 1px #ff0000;
+    color: #fff;
+}

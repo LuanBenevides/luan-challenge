@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./main.css">
+    <title>Login page</title>
+</head>
+<body>
+    <form method="get" action="#">
+        <div class="loginInputs">
+            <input type="text" required id="userLogin">
+            <span>Nome de usuário</span>
+        </div>
+        <div class="loginInputs">
+            <input type="password" required id="userPassLogin">
+            <span>Senha</span>
+        </div>
+        <div class="loginAndReset">
+            <button id="reset">Esqueci minha senha</button>
+            <button id="login" onclick="startLogon()">Logar</button>
+        </div>
+        <div class="cadastroArea">
+            <p>Ainda não possui conta? Cadastre-se <a href="#">aqui</a></p>
+        </div>
+    </form>
+    <script src="./scripts/validPass.js"></script>
+</body>
+</html>
