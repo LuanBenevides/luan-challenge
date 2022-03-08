@@ -1,0 +1,40 @@
+.banner{
+    width: 50%;
+}
+.defaultBannerOne{
+    border: solid 1px #181818;
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    background-color: #f0f0f0;
+    opacity: 0;
+}
+.defaultBannerTwo{
+    border: solid 1px #181818;
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    background-color: #e0e0e0;
+    opacity: 0;
+    
+}
+.defaultBannerThree{
+    border: solid 1px #181818;
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    background-color: #d0d0d0;
+    opacity: 0;
+}
+.defaultBannerFour{
+    border: solid 1px #181818;
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    background-color: #b0b0b0;
+    opacity: 0;
+}
+
+.selecionado{
+    opacity: 1;
+}
