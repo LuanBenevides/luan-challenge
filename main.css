@@ -1,10 +1,29 @@
 @import url("./styles/loginArea.css");
 @import url("./styles/createAccount.css");
 @import url("./styles/banners.css");
+@import url("./styles/sistemaHomePage.css");
 
+.painel{
+    height: 85vh;
+}
 .outSet{
     display: flex;
     width: 70%;
     margin: 0px auto;
     margin-top: 100px;
+    background-color: #fff;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background: radial-gradient(
+        circle at 33% 100%,
+        #9063cd,
+        #5344a9,
+        #7a5197,
+        #bb5090,
+        #606060,
+        #181818
+        );
 }

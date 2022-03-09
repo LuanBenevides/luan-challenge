@@ -8,36 +8,63 @@
     <title>Login page</title>
 </head>
 <body>
-<div class="outSet">
-    <form method="get" action="#" class="formLogin">
-        <div class="loginInputs">
-            <input type="text" required id="userLogin">
-            <span>Nome de usuário</span>
-        </div>
-        <div class="loginInputs">
-            <input type="password" required id="userPassLogin">
-            <span>Senha</span>
-        </div>
-        <div class="loginAndReset">
-            <button id="reset">Esqueci minha senha</button>
-            <button id="login" onclick="startLogon()">Logar</button>
-        </div>
-        <div class="cadastroArea">
-            <p>Ainda não possui conta? Cadastre-se <a href="#">aqui</a></p>
-        </div>
-    </form>
-    <div class="banner">
-        <div class="defaultBannerOne selecionado">
-        </div>
-        <div class="defaultBannerTwo">
-        </div>
-        <div class="defaultBannerThree">
-        </div>
-        <div class="defaultBannerFour">
+<div class="painel">    
+    <div class="outSet">
+        <form method="get" action="#" class="formLogin">
+            <div class="loginInputs">
+                <input type="text" required id="userLogin">
+                <span>Nome de usuário</span>
+            </div>
+            <div class="loginInputs">
+                <input type="password" required id="userPassLogin">
+                <span>Senha</span>
+            </div>
+            <div class="loginAndReset">
+                <button id="reset">Esqueci minha senha</button>
+                <button id="login" onclick="startLogon()">Logar</button>
+            </div>
+            <div class="cadastroArea">
+                <p>Ainda não possui conta? Inscreva-se <a href="#" id="newAccount">aqui</a></p>
+            </div>
+        </form>
+        <div class="banner">
+            <div class="defaultBannerOne selecionado">
+            </div>
+            <div class="defaultBannerTwo">
+            </div>
+            <div class="defaultBannerThree">
+            </div>
+            <div class="defaultBannerFour">
+            </div>
         </div>
     </div>
+    <div class="createAccount" id="createAccount">
+        <h1>Cadastre-se já!</h1>
+        <form class="newAccount" method="get" action="#">
+            <input type="text" placeholder="Informe o seu nome" id="userName">
+            <input type="text" placeholder="Crie um nome de usuário" id="userNickName">
+            <input type="email" placeholder="Informe o seu e-mail" id="userMail">
+            <input type="password" inputmode="" placeholder="Informe uma senha" id="userPassword">
+            <input type="password" placeholder="Confirme a sua senha" id="confirmUserPassword">
+        </form>
+        <div class="cancelNewAccountCreate">
+            <button id="cancelNewAccountCreate">Cancelar</button>
+            <button type="button" id="confirmaNewAccount" onclick="cadastroSolicitado()">Confirmar</button>
+        </div>
+    </div>
+    <div class="homePage" id="homePage">
+        <h1>Dentro do sistema</h1>
+        <p>Usuário logado com êxito</p>
+        <h3>A partir daqui, o usuário inscrito poderá:</h3>
+        <ul>
+            <li>Criar novos usuários;</li>
+            <li>Alterar os usuários existentes;</li>
+            <li>Deletar outros usuários;</li>
+        </ul>
+        <button onclick="openSistema()">Clique aqui para sair</button>
+    </div>
 </div>
-    <script src="./scripts/validPass.js"></script>
-    <script src="./scripts/dinamicBanner.js"></script>
+<script src="./scripts/validPass.js"></script>
+<script src="./scripts/dinamicBanner.js"></script>
 </body>
 </html>

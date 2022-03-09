@@ -1,0 +1,21 @@
+.homePage{
+    display: none;
+    position: absolute;
+    width: 1000px;
+    height: 500px;
+    top: 50px;
+    left: 200px;
+}
+.homePageActivate{
+    display: block;
+    position: absolute;
+    width: 1000px;
+    height: 500px;
+    top: 50px;
+    left: 200px;
+    background-color: #fff;
+    border: solid 1px #181818;
+}
+.homePageActivate button{
+    cursor: pointer;
+}

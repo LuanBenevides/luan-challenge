@@ -18,6 +18,7 @@
     color: #181818;
     outline: none;
     border: solid 1px #181818;
+    border-radius: 7px;
 }
 .loginInputs span{
     position: absolute;
@@ -52,6 +53,8 @@
     color: #181818;
     outline: none;
     border: solid 1px #181818;
+    border-radius: 7px;
+    border-radius: 7px;
     background-color: #fff;
     transition: .8s;
     cursor: pointer;
@@ -69,8 +72,8 @@
     border: solid 1px #00ff00;
 }
 .loginAndReset button#reset:hover{
-    background-color: #ff0000;
-    border: solid 1px #ff0000;
+    background-color: #9063cd;
+    border: solid 1px #9063cd;
     color: #fff;
 }
 .cadastroArea p{
