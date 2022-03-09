@@ -26,6 +26,8 @@ let abrir = document.getElementById("createAccount");
 let botaoDeCriarConta = document.getElementById("newAccount");
 let cancelCNACC= document.getElementById("cancelNewAccountCreate");
 
+let visitante = window.prompt("Olá, como você se chama?");
+alert(`Seja bem vindo, ${visitante}!Para testar esse projeto, vc deve se inscrever e logar com o usuário e senha que criar... caso não consiga, existe um usuário de teste. User: Luan; Senha: Senha@123... Obrigado pela visita!`);
 
 function startLogon(){
     let userLogin = document.getElementById("userLogin").value;
