@@ -72,8 +72,8 @@
     border: solid 1px #00ff00;
 }
 .loginAndReset button#reset:hover{
-    background-color: #9063cd;
-    border: solid 1px #9063cd;
+    background-color: #f00;
+    border: solid 1px #f00;
     color: #fff;
 }
 .cadastroArea p{

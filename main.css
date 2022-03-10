@@ -19,11 +19,16 @@ body{
     box-sizing: border-box;
     background: radial-gradient(
         circle at 33% 100%,
-        #9063cd,
+        #111,
+        #333,
+        #555,
+        #656565,
+        #878787,
+        #a9a9a9);
+       /* #9063cd,
         #5344a9,
         #7a5197,
         #bb5090,
         #606060,
-        #181818
-        );
+        #181818*/
 }

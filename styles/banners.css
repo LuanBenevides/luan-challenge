@@ -6,7 +6,7 @@
     width: 500px;
     height: 400px;
     position: absolute;
-    background-color: #9063cd;
+    background-color: #111;
     opacity: 0;
 }
 .defaultBannerTwo{
@@ -14,7 +14,7 @@
     width: 500px;
     height: 400px;
     position: absolute;
-    background-color: #5344a9;
+    background-color: #333;
     opacity: 0;
     
 }
@@ -23,7 +23,7 @@
     width: 500px;
     height: 400px;
     position: absolute;
-    background-color: #7a5197;
+    background-color: #555;
     opacity: 0;
 }
 .defaultBannerFour{
@@ -31,7 +31,7 @@
     width: 500px;
     height: 400px;
     position: absolute;
-    background-color: #bb5090;
+    background-color: #181818;
     opacity: 0;
 }
 
