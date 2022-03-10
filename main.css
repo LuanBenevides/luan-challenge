@@ -2,7 +2,7 @@
 @import url("./styles/createAccount.css");
 @import url("./styles/banners.css");
 @import url("./styles/sistemaHomePage.css");
-
+@import url("./styles/alteracaoDeUsuario.css");
 .painel{
     height: 85vh;
 }

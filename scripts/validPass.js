@@ -1,16 +1,19 @@
 //Constante de usuários cadastrados
 let usuarios = [
     {
+        id: 0,
         name: "AdminTestes",
         email: "AdminTestes@teste.com",
         password: "Senha@123"
     },
     {
+        id: 1,
         name: "Luan",
         email:"LuanTeste@teste.com",
         password: "Senha@456",
     },
-    {
+    {   
+        id: 2,
         name: "Lucas",
         email: "LucasTeste@teste.com",
         password: "Senha@789"
@@ -25,8 +28,11 @@ let abrir = document.getElementById("createAccount");
 let botaoDeCriarConta = document.getElementById("newAccount");
 let cancelCNACC= document.getElementById("cancelNewAccountCreate");
 
-let visitante = window.prompt("Olá, como você se chama?");
-alert(`Seja bem vindo, ${visitante}!Para testar esse projeto, vc deve se inscrever e logar com o usuário e senha que criar... caso não consiga, existe um usuário de teste. User: Luan; Senha: Senha@123... Obrigado pela visita!`);
+function interacaoBoasVindas(){
+    let visitante = window.prompt("Olá, como você se chama?");
+    window.alert(`Seja bem vindo, ${visitante}!Para testar esse projeto, vc deve se inscrever e logar com o usuário e senha que criar... caso não consiga, existe um usuário de teste. User: Luan; Senha: Senha@456... Obrigado pela visita!`);
+}
+
 
 function startLogon(){
     let userLogin = document.getElementById("userLogin").value;
@@ -58,7 +64,7 @@ function cadastroSolicitado(){
     let senha1 = userPassword.value;
     let confirmaSenha1 = confirmUserPassword.value;
     let nickname1 = userNickName.value;
-    
+    let idNovo = usuarios.length;
     senha1.toString();
     confirmaSenha1.toString();
     cleanListaUsuarios();
@@ -71,6 +77,7 @@ function cadastroSolicitado(){
     }else{
         usuarios.push(
             {
+                id: idNovo,
                 name: nickname1,
                 email: email1,
                 password: senha1
@@ -84,6 +91,10 @@ function cadastroSolicitado(){
 
 function openSistema(){
     let home = document.getElementById("homePage");
+    let userLogin = document.getElementById("userLogin").value;
+    let userLogado = document.getElementById("logado");
+    userLogado.innerText = `Usuário logado: ${userLogin}`
+
     if(home.classList.contains("homePage")){
         home.classList.remove("homePage");
         home.classList.add("homePageActivate");
@@ -98,8 +109,8 @@ function carregarUsuariosExistentes(){
     usuariosExistentes.innerHTML += `<h3 class="homeOutsetTableh3">Lista de usuários cadastrados</h3>
         <table class="homeOutsetTable">
             <tr>
+                <th>Id: </th>
                 <th>Nome de usuário: </th>
-                <th>E-mail: </th>
                 <th>Alterar</th>
                 <th>Excluir</th>
             </tr>
@@ -108,9 +119,9 @@ function carregarUsuariosExistentes(){
     for(iterador = 0;iterador <= usuarios.length;iterador++){
         usuariosExistentes.innerHTML += `<table class="homeOutsetTable">
             <tr>
+                <td>${usuarios[iterador].id}</td>
                 <td>${usuarios[iterador].name}</td>
-                <td>${usuarios[iterador].email}</td>
-                <td><button>Alterar</button></td>
+                <td><button onclick="alterar(${usuarios[iterador].id})">Alterar</button></td>
                 <td><button>Excluir</button></td>
             </tr>
         </table>`;
@@ -121,11 +132,58 @@ function cleanListaUsuarios(){
     usuariosExistentes.innerHTML = ` `;
 }
 
+function alterar(userID = usuarios[iterador].id){
+    console.log(userID);   
+    let divAlteracao = document.getElementById("pageReaduser");
+    let iterador2;
+    for(iterador2 = 0;iterador2 < usuarios.length;iterador2++){
+        limpaAlterar();
+        if(userID == usuarios[iterador2].id){
+            divAlteracao.innerHTML += `
+                <form method="post" action="#">
+                    <label>Nome de usuário:</label><br>
+                    <input type="text" placeholder="${usuarios[iterador2].name}"><br>
+                    <label>E-mail: </label><br>
+                    <input type="email" placeholder="${usuarios[iterador2].email}"><br>
+                    <label>Nova senha: </label><br>
+                    <input type="password" placeholder="${usuarios[iterador2].password}"><br>
+                </form><br>
+                <div class="buttonsAlter">
+                    <button onclick="exibeAlteradorDeUsuario()">Cancelar</button><button>Confirmar</button>
+                </div>
+            `
+            iterador2 = usuarios.length + 3;
+            exibeAlteradorDeUsuario();
+        }else if(userID != usuarios[iterador2].id){
+            limpaAlterar();
+        }
+    }
+    
+    
+   
+}
+function limpaAlterar(){
+    let divAlteracao = document.getElementById("pageReaduser");
+    divAlteracao.innerHTML = ` `;
+}
+
+function exibeAlteradorDeUsuario(){
+    let divAlteracao = document.getElementById("pageReaduser");
+    if(divAlteracao.classList.contains("pageReaduser")){
+        divAlteracao.classList.remove("pageReaduser");
+        divAlteracao.classList.add("pageReaduserActived");
+    }else if(divAlteracao.classList.contains("pageReaduserActived")){
+        divAlteracao.classList.remove("pageReaduserActived");
+        divAlteracao.classList.add("pageReaduser");
+    }
+}
+
 
 //alteração de usuário
 
-botaoDeCriarConta.addEventListener("click", openCloseNewAccountArea);
-cancelCNACC.addEventListener("click", openCloseNewAccountArea);
+botaoDeCriarConta.addEventListener("click", openCloseNewAccountArea());
+cancelCNACC.addEventListener("click", openCloseNewAccountArea());
+document.addEventListener("load", interacaoBoasVindas());
 
 
 
