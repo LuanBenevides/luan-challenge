@@ -1,5 +1,4 @@
 //Constante de usuários cadastrados
-//Aprender a procurar itens em arrays que possuam determinada palavra como parâmetro;
 let usuarios = [
     {
         name: "AdminTestes",
@@ -39,7 +38,7 @@ function startLogon(){
             controle = usuarios.length + 2;
         }
     }if(controle == usuarios.length){
-        alert("Usuário não cadastrado!");
+        alert("Usuário não identificado!");
         controle = 0;
     }
 }
@@ -62,7 +61,7 @@ function cadastroSolicitado(){
     
     senha1.toString();
     confirmaSenha1.toString();
-
+    cleanListaUsuarios();
     if(nome1.value == null && email1 == null && nickname1 == null && senha1 == null && confirmaSenha1 == null){
         alert("Dados vazios! Por favor, preencha o formulário...");
     }else if(senha1.length < 6 ){
@@ -77,7 +76,7 @@ function cadastroSolicitado(){
                 password: senha1
             }
         );
-        alert("Usuário cadastrado! Indo para a tela de login...");
+        alert("Usuário cadastrado! Retornando para a tela de login...");
         openCloseNewAccountArea();
         console.log(usuarios);
     }
@@ -92,10 +91,41 @@ function openSistema(){
         home.classList.remove("homePageActivate");
         home.classList.add("homePage");
     }
+    carregarUsuariosExistentes();
+}
+function carregarUsuariosExistentes(){
+    let usuariosExistentes = document.getElementById("usuariosExistentes");
+    usuariosExistentes.innerHTML += `<h3 class="homeOutsetTableh3">Lista de usuários cadastrados</h3>
+        <table class="homeOutsetTable">
+            <tr>
+                <th>Nome de usuário: </th>
+                <th>E-mail: </th>
+                <th>Alterar</th>
+                <th>Excluir</th>
+            </tr>
+        </table>
+    `
+    for(iterador = 0;iterador <= usuarios.length;iterador++){
+        usuariosExistentes.innerHTML += `<table class="homeOutsetTable">
+            <tr>
+                <td>${usuarios[iterador].name}</td>
+                <td>${usuarios[iterador].email}</td>
+                <td><button>Alterar</button></td>
+                <td><button>Excluir</button></td>
+            </tr>
+        </table>`;
+    }
+}
+
+function cleanListaUsuarios(){
+    usuariosExistentes.innerHTML = ` `;
 }
 
 
+//alteração de usuário
+
 botaoDeCriarConta.addEventListener("click", openCloseNewAccountArea);
 cancelCNACC.addEventListener("click", openCloseNewAccountArea);
+
 
 
