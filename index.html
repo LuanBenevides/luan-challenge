@@ -24,7 +24,7 @@
                 <button id="login" onclick="startLogon()">Logar</button>
             </div>
             <div class="cadastroArea">
-                <p>Ainda não possui conta? Inscreva-se <a href="#" id="newAccount">aqui</a></p>
+                <p>Ainda não possui conta? Inscreva-se <a href="#" id="newAccount" onclick="openCloseNewAccountArea()">aqui</a></p>
             </div>
         </form>
         <div class="banner">
@@ -48,7 +48,7 @@
             <input type="password" placeholder="Confirme a sua senha" id="confirmUserPassword">
         </form>
         <div class="cancelNewAccountCreate">
-            <button id="cancelNewAccountCreate">Cancelar</button>
+            <button type="button" id="cancelNewAccountCreate" onclick="openCloseNewAccountArea()">Cancelar</button>
             <button type="button" id="confirmaNewAccount" onclick="cadastroSolicitado()">Confirmar</button>
         </div>
     </div>

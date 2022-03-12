@@ -90,6 +90,7 @@ function cadastroSolicitado(){
 }
 
 function openSistema(){
+    cleanListaUsuarios();
     let home = document.getElementById("homePage");
     let userLogin = document.getElementById("userLogin").value;
     let userLogado = document.getElementById("logado");
@@ -142,14 +143,14 @@ function alterar(userID = usuarios[iterador].id){
             divAlteracao.innerHTML += `
                 <form method="post" action="#">
                     <label>Nome de usuário:</label><br>
-                    <input type="text" placeholder="${usuarios[iterador2].name}"><br>
+                    <input type="text" id="novoNome" placeholder="${usuarios[iterador2].name}"><br>
                     <label>E-mail: </label><br>
-                    <input type="email" placeholder="${usuarios[iterador2].email}"><br>
+                    <input type="email" id="novoEmail" placeholder="${usuarios[iterador2].email}"><br>
                     <label>Nova senha: </label><br>
-                    <input type="password" placeholder="${usuarios[iterador2].password}"><br>
+                    <input type="password" id="novaSenha" placeholder="${usuarios[iterador2].password}"><br>
                 </form><br>
                 <div class="buttonsAlter">
-                    <button onclick="exibeAlteradorDeUsuario()">Cancelar</button><button>Confirmar</button>
+                    <button onclick="exibeAlteradorDeUsuario()">Cancelar</button><button type="button" onclick="dataModifyer(${userID})">Confirmar</button>
                 </div>
             `
             iterador2 = usuarios.length + 3;
@@ -158,9 +159,26 @@ function alterar(userID = usuarios[iterador].id){
             limpaAlterar();
         }
     }
+}
+function dataModifyer(userIDAlter = userID){
+    console.log(userIDAlter)
+    let novoNomeAlter = document.getElementById("novoNome").value;
+    let novoEmailAlter = document.getElementById("novoEmail").value;
+    let novaSenhaAlter = document.getElementById("novaSenha").value;
+
+    for(iterador3 = 0;iterador3 < usuarios.length;iterador3++){
+        if(userIDAlter == usuarios[iterador3].id){
+            usuarios[iterador3].name = novoNomeAlter;
+            usuarios[iterador3].email = novoEmailAlter;
+            usuarios[iterador3].password = novaSenhaAlter;
+            alert("Usuário alterado com sucesso!");
+            cleanListaUsuarios();
+            iterador3 = usuarios.length + 4;
+        }  
+        exibeAlteradorDeUsuario();
+        carregarUsuariosExistentes();
+    }
     
-    
-   
 }
 function limpaAlterar(){
     let divAlteracao = document.getElementById("pageReaduser");
@@ -184,6 +202,5 @@ function exibeAlteradorDeUsuario(){
 botaoDeCriarConta.addEventListener("click", openCloseNewAccountArea());
 cancelCNACC.addEventListener("click", openCloseNewAccountArea());
 document.addEventListener("load", interacaoBoasVindas());
-
 
 
