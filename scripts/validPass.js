@@ -150,7 +150,7 @@ function alterar(userID = usuarios[iterador].id){
                     <input type="password" id="novaSenha" placeholder="${usuarios[iterador2].password}"><br>
                 </form><br>
                 <div class="buttonsAlter">
-                    <button onclick="exibeAlteradorDeUsuario()">Cancelar</button><button type="button" onclick="dataModifyer(${userID})">Confirmar</button>
+                    <button onclick="exibeAlteradorDeUsuario()">Cancelar</button><button onclick="dataModifyer(${userID})">Confirmar</button>
                 </div>
             `
             iterador2 = usuarios.length + 3;
@@ -161,7 +161,7 @@ function alterar(userID = usuarios[iterador].id){
     }
 }
 function dataModifyer(userIDAlter = userID){
-    console.log(userIDAlter)
+    console.log("Alter id = " + userIDAlter);
     let novoNomeAlter = document.getElementById("novoNome").value;
     let novoEmailAlter = document.getElementById("novoEmail").value;
     let novaSenhaAlter = document.getElementById("novaSenha").value;
@@ -171,13 +171,27 @@ function dataModifyer(userIDAlter = userID){
             usuarios[iterador3].name = novoNomeAlter;
             usuarios[iterador3].email = novoEmailAlter;
             usuarios[iterador3].password = novaSenhaAlter;
-            alert("Usuário alterado com sucesso!");
+            console.log(usuarios[iterador3]);
+            exibeAlteradorDeUsuario();
+            alert("Usuário alterado com êxito!");
             cleanListaUsuarios();
-            iterador3 = usuarios.length + 4;
-        }  
+            iterador3 = usuarios.length + 4; 
+        }
+    }
+    carregarUsuariosExistentes();
+    /*for(let iterador3 = 0;iterador3 < usuarios.length;iterador3++){
+        if(userIDAlter == usuarios[iterador3].id){
+            console.log(`MODIFY: ${userIDAlter}`);
+            usuarios[iterador3].name = novoNomeAlter.value;
+            usuarios[iterador3].email = novoEmailAlter.value;
+            usuarios[iterador3].password = novaSenhaAlter.value;
+            alert("Usuário alterado com sucesso!");
+           
+            cleanListaUsuarios();
+        }
         exibeAlteradorDeUsuario();
         carregarUsuariosExistentes();
-    }
+    }*/
     
 }
 function limpaAlterar(){
