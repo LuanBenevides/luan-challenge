@@ -30,7 +30,7 @@ let cancelCNACC= document.getElementById("cancelNewAccountCreate");
 
 function interacaoBoasVindas(){
     let visitante = window.prompt("Olá, como você se chama?");
-    window.alert(`Seja bem vindo, ${visitante}!Para testar esse projeto, vc deve se inscrever e logar com o usuário e senha que criar... caso não consiga, existe um usuário de teste. User: Luan; Senha: Senha@456... Obrigado pela visita!`);
+    window.alert(`Seja bem vindo (a), ${visitante}! Para testar esse projeto, vc deve se inscrever e logar com o usuário e senha que criar... caso não consiga, existe um usuário de teste. User: Luan; Senha: Senha@456... Obrigado pela visita!`);
 }
 
 
@@ -123,7 +123,7 @@ function carregarUsuariosExistentes(){
                 <td>${usuarios[iterador].id}</td>
                 <td>${usuarios[iterador].name}</td>
                 <td><button onclick="alterar(${usuarios[iterador].id})">Alterar</button></td>
-                <td><button>Excluir</button></td>
+                <td><button onclick="deletarUsuario(${usuarios[iterador].id})">Excluir</button></td>
             </tr>
         </table>`;
     }
@@ -210,11 +210,23 @@ function exibeAlteradorDeUsuario(){
     }
 }
 
-
+function deletarUsuario(usuarioDeletado = usuarios[iterador].id){
+        usuarioDeletadoCapt = usuarioDeletado;
+        for(controle = 0;controle < usuarios.length;controle++){
+            if(controle == usuarioDeletadoCapt){
+                console.log(`O usuário deletado é: ${usuarios[controle].name}`);
+                cleanListaUsuarios();
+                delete usuarios[usuarioDeletadoCapt];
+                controle = usuarios.length + 10;
+                
+            }carregarUsuariosExistentes();
+        }
+        
+}
 //alteração de usuário
 
 botaoDeCriarConta.addEventListener("click", openCloseNewAccountArea());
 cancelCNACC.addEventListener("click", openCloseNewAccountArea());
-document.addEventListener("load", interacaoBoasVindas());
+document.body.addEventListener("load", interacaoBoasVindas());
 
 
