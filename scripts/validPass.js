@@ -28,6 +28,7 @@ let abrir = document.getElementById("createAccount");
 let botaoDeCriarConta = document.getElementById("newAccount");
 let cancelCNACC= document.getElementById("cancelNewAccountCreate");
 
+//Iscript de interação - Está com bug
 function interacaoBoasVindas(){
     let visitante = window.prompt("Olá, como você se chama?");
     window.alert(`Seja bem vindo (a), ${visitante}! Para testar esse projeto, vc deve se inscrever e logar com o usuário e senha que criar... caso não consiga, existe um usuário de teste. User: Luan; Senha: Senha@456... Obrigado pela visita!`);
@@ -48,6 +49,8 @@ function startLogon(){
         controle = 0;
     }
 }
+
+//Script para exibição de parte da tela - Criação de conta
 function openCloseNewAccountArea(){
     if(abrir.classList.contains("createAccount")){
         abrir.classList.remove("createAccount");
@@ -225,8 +228,10 @@ function deletarUsuario(usuarioDeletado = usuarios[iterador].id){
 }
 //alteração de usuário
 
+let logonParte = document.getElementById("logonParte");
+
 botaoDeCriarConta.addEventListener("click", openCloseNewAccountArea());
 cancelCNACC.addEventListener("click", openCloseNewAccountArea());
-document.body.addEventListener("load", interacaoBoasVindas());
+logonParte.addEventListener("load", interacaoBoasVindas());
 
 

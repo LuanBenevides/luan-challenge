@@ -9,7 +9,8 @@
 </head>
 <body>
 <div class="painel">    
-    <div class="outSet">
+    <!--Tela de login - Exibida por padrão-->
+    <div class="outSet" id="logonParte">
         <form method="get" action="#" class="formLogin">
             <div class="loginInputs">
                 <input type="text" required id="userLogin">
@@ -21,7 +22,7 @@
             </div>
             <div class="loginAndReset">
                 <button id="reset">Esqueci minha senha</button>
-                <button id="login" onclick="startLogon()">Logar</button>
+                <button id="login" type="button" onclick="startLogon()">Logar</button>
             </div>
             <div class="cadastroArea">
                 <p>Ainda não possui conta? Inscreva-se <a href="#" id="newAccount" onclick="openCloseNewAccountArea()">aqui</a></p>
@@ -52,6 +53,7 @@
             <button type="button" id="confirmaNewAccount" onclick="cadastroSolicitado()">Confirmar</button>
         </div>
     </div>
+    <!--Espaço após estar logado-->
     <div class="homePage" id="homePage">
         <div class="homeOutset">
             <div>
