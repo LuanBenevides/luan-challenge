@@ -39,7 +39,7 @@ function startLogon(){
     let userLogin = document.getElementById("userLogin").value;
     let userPassLogin = document.getElementById("userPassLogin").value;
 
-    for(controle =0; controle < usuarios.length;controle++){
+    for(controle = 0; controle < usuarios.length;controle++){
         if(userLogin == usuarios[controle].name && userPassLogin == usuarios[controle].password){
             openSistema();
             controle = usuarios.length + 2;
@@ -182,20 +182,6 @@ function dataModifyer(userIDAlter = userID){
         }
     }
     carregarUsuariosExistentes();
-    /*for(let iterador3 = 0;iterador3 < usuarios.length;iterador3++){
-        if(userIDAlter == usuarios[iterador3].id){
-            console.log(`MODIFY: ${userIDAlter}`);
-            usuarios[iterador3].name = novoNomeAlter.value;
-            usuarios[iterador3].email = novoEmailAlter.value;
-            usuarios[iterador3].password = novaSenhaAlter.value;
-            alert("Usuário alterado com sucesso!");
-           
-            cleanListaUsuarios();
-        }
-        exibeAlteradorDeUsuario();
-        carregarUsuariosExistentes();
-    }*/
-    
 }
 function limpaAlterar(){
     let divAlteracao = document.getElementById("pageReaduser");
@@ -214,17 +200,17 @@ function exibeAlteradorDeUsuario(){
 }
 
 function deletarUsuario(usuarioDeletado = usuarios[iterador].id){
-        usuarioDeletadoCapt = usuarioDeletado;
         for(controle = 0;controle < usuarios.length;controle++){
-            if(controle == usuarioDeletadoCapt){
+            if(controle == usuarioDeletado){
                 console.log(`O usuário deletado é: ${usuarios[controle].name}`);
-                cleanListaUsuarios();
-                delete usuarios[usuarioDeletadoCapt];
+                usuarios.splice(usuarioDeletado, 1);
                 controle = usuarios.length + 10;
                 
-            }carregarUsuariosExistentes();
+                cleanListaUsuarios();
+            }
         }
-        
+
+    carregarUsuariosExistentes();
 }
 //alteração de usuário
 

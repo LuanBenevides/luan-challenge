@@ -4,11 +4,12 @@
 @import url("./styles/sistemaHomePage.css");
 @import url("./styles/alteracaoDeUsuario.css");
 .painel{
-    height: 85vh;
+    height: 100vh;
 }
 .outSet{
     display: flex;
     width: 70%;
+    height: 60vh;
     margin: 0px auto;
     margin-top: 100px;
     background-color: #fff;

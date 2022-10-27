@@ -1,18 +1,21 @@
 .banner{
     width: 50%;
+    box-sizing: border-box;
 }
 .defaultBannerOne{
     border: solid 1px #181818;
-    width: 500px;
-    height: 400px;
+    width: 517px;
+    padding: 0px;
+    margin: 0px;
+    height: 426px;
     position: absolute;
     background-color: #111;
     opacity: 0;
 }
 .defaultBannerTwo{
     border: solid 1px #181818;
-    width: 500px;
-    height: 400px;
+    width: 517px;
+    height: 426px;
     position: absolute;
     background-color: #333;
     opacity: 0;
@@ -20,16 +23,16 @@
 }
 .defaultBannerThree{
     border: solid 1px #181818;
-    width: 500px;
-    height: 400px;
+    width: 517px;
+    height: 426px;
     position: absolute;
     background-color: #555;
     opacity: 0;
 }
 .defaultBannerFour{
     border: solid 1px #181818;
-    width: 500px;
-    height: 400px;
+    width: 517px;
+    height: 426px;
     position: absolute;
     background-color: #181818;
     opacity: 0;
