@@ -1,0 +1,55 @@
+@media(max-width: 360px){
+    .painel{
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        background-color: none;
+    }
+    
+    .banner{
+        display: none;
+    }
+    .formLogin{
+        width: 360px;
+        height: auto;
+        margin: 5px;
+        padding: 0;
+        border: solid 1px #000;
+        background-color: #fff;
+    }
+    .logonParte{
+        width: 340px;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+    .loginInputs input{
+        width: 180px;
+        height: 20px;
+        padding: 10px;
+        margin-left: 20px;
+    }
+    .loginInputs span{
+        margin-left: 30px;
+        font-size: 18px;
+    }
+
+    #reset{ 
+        margin-left: 20px;
+        margin-top: 10px;
+        padding: 2px;
+        width: 200px;
+        border-radius: 7px;
+    }
+    #login{
+        margin-left: 35px;
+        margin-top: 10px;
+        padding: 4px;
+        width: 202px;
+        border-radius: 7px;
+    }
+    .cadastroArea{
+        padding: 20px;
+    }
+}
