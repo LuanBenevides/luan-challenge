@@ -1,7 +1,7 @@
 # luan-challenge
 This project aims to make my studies more effective.
 
-Tecnologias utilizadas na construção:
+Technologies used in construction:
 
 <div style="display: inline_block"><br/>
     <img align="center" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="Html5">
