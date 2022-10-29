@@ -3,6 +3,7 @@
 @import url("./styles/banners.css");
 @import url("./styles/sistemaHomePage.css");
 @import url("./styles/alteracaoDeUsuario.css");
+@import url("./styles/responsividade/telaLogin.css");
 .painel{
     height: 100vh;
 }

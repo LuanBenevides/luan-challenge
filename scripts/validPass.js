@@ -200,16 +200,20 @@ function exibeAlteradorDeUsuario(){
 }
 
 function deletarUsuario(usuarioDeletado = usuarios[iterador].id){
-        for(controle = 0;controle < usuarios.length;controle++){
+        for(controle = 0;controle <= usuarios.length;controle++){
             if(controle == usuarioDeletado){
+                
                 console.log(`O usuário deletado é: ${usuarios[controle].name}`);
                 usuarios.splice(usuarioDeletado, 1);
-                controle = usuarios.length + 10;
+                controle = usuarios.length + 1;
                 
                 cleanListaUsuarios();
+
+                if(usuarios.length === 1){
+                    alert("Restará somente um usuário na base! Este usuário restante não poderá ser removido...");
+                }
             }
         }
-
     carregarUsuariosExistentes();
 }
 //alteração de usuário
